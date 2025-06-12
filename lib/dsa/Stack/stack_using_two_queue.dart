@@ -17,7 +17,6 @@ class StackWithQueue {
 
     int? poppedValue = queue1.removeFirst();
 
-    // Swap queues
     var temp = queue1;
     queue1 = queue2;
     queue2 = temp;
