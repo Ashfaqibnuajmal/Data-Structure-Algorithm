@@ -37,4 +37,7 @@ void main() {
   List<int> arr = [64, 34, 25, 12, 22, 11, 90];
   mergeSort(arr);
   print(arr); // Output: [11, 12, 22, 25, 34, 64, 90]
+
+  // int number = 2514;
+  // List<int> digits = number.toString().split('').map(int.parse).toList();
 }

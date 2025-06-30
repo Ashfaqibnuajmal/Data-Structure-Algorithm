@@ -1,25 +1,19 @@
-class TreeNode {
-  int value;
-  TreeNode? left, right;
-  TreeNode(this.value);
-}
-
-bool isBst(TreeNode? root, [TreeNode? min, TreeNode? max]) {
-  if (root == null) return true;
-  if ((min != null && root.value <= min.value) ||
-      (max != null && root.value >= max.value)) {
-    return false;
+class Person {
+  final String name;
+  final int age;
+  Person(this.name, this.age);
+  Person.named({required this.age, required this.name});
+  Person.optional({this.age = 2, this.name = "ashfaq"});
+  Person.constPerson(this.name, this.age);
+  factory Person.fromMap(Map<String, dynamic> data) {
+    return Person(data['name'], data['age']);
   }
-  return isBst(root.left, min, root) && isBst(root.right, root, max);
 }
 
 void main() {
-  TreeNode root = TreeNode(20)
-    ..left = TreeNode(10)
-    ..right = TreeNode(30)
-    ..left?.left = TreeNode(5)
-    ..left?.right = TreeNode(15)
-    ..right?.left = TreeNode(25)
-    ..right?.right = TreeNode(35);
-  print(isBst(root));
+  Person p1 = Person("Ashfaq", 20);
+  Person p2 = Person.named(age: 12, name: "ashfaq");
+  Person p3 = Person.constPerson("ashfaq", 29);
+  Person p4 = Person.fromMap({'name': 'ashfaq', 'age': 23});
+  Person p5 = Person.optional();
 }

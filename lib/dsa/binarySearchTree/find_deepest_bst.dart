@@ -4,6 +4,13 @@ class TreeNode {
   TreeNode(this.value);
 }
 
+int findHeight(TreeNode? node) {
+  if (node == null) return -1;
+  int leftHeight = findHeight(node.left);
+  int rightHeight = findHeight(node.right);
+  return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
+}
+
 int? findDeepestNode(TreeNode? root) {
   if (root == null) return null;
 
@@ -14,13 +21,6 @@ int? findDeepestNode(TreeNode? root) {
   if (rightHeight > leftHeight) return root.right!.value;
 
   return root.value;
-}
-
-int findHeight(TreeNode? node) {
-  if (node == null) return -1;
-  int leftHeight = findHeight(node.left);
-  int rightHeight = findHeight(node.right);
-  return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
 }
 
 void main() {

@@ -13,10 +13,8 @@ Node? removeDuplicates(Node? head) {
 
   while (current != null) {
     if (seen.contains(current.data)) {
-      // Skip the duplicate node
       prev?.next = current.next;
     } else {
-      // Add the element to the set
       seen.add(current.data);
       prev = current;
     }

@@ -37,4 +37,7 @@ void main() {
   List<String> arr = ['orange', 'banana', 'apple', 'grape', 'pear'];
   mergeSort(arr);
   print(arr); // Output: ['apple', 'banana', 'grape', 'orange', 'pear']
+
+  // String text = "dbca";
+  // List<String> chars = text.split('');
 }

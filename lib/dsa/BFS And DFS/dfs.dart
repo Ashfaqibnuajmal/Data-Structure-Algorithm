@@ -6,9 +6,9 @@ class TreeNode {
 
 void dfs(TreeNode? node) {
   if (node == null) return;
-  print(node.value); // Visit the node
-  dfs(node.left); // Traverse left subtree
-  dfs(node.right); // Traverse right subtree
+  print(node.value);
+  dfs(node.left);
+  dfs(node.right);
 }
 
 void main() {

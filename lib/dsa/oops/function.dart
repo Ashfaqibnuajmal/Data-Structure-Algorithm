@@ -23,11 +23,11 @@
 //   greet('Bob'); // Output: Hello, Bob! You are 0 years old.
 // }
 
-void greet({required String name, int age = 0}) {
-  print('Hello, $name! You are $age years old.');
-}
+// void greet({required String name, int age = 0}) {
+//   print('Hello, $name! You are $age years old.');
+// }
 
-void main() {
-  greet(name: 'Alice', age: 25); // Output: Hello, Alice! You are 25 years old.
-  greet(name: 'Bob'); // Output: Hello, Bob! You are 0 years old.
-}
+// void main() {
+//   greet(name: 'Alice', age: 25); // Output: Hello, Alice! You are 25 years old.
+//   greet(name: 'Bob'); // Output: Hello, Bob! You are 0 years old.
+// }

@@ -9,10 +9,10 @@ class QueueWithStack {
   int? dequeue() {
     if (stack2.isEmpty) {
       while (stack1.isNotEmpty) {
-        stack2.add(stack1.removeLast());
+        stack2.add(stack1.removeAt(0));
       }
     }
-    return stack2.isEmpty ? null : stack2.removeLast();
+    return stack2.isEmpty ? null : stack2.removeAt(0);
   }
 
   void display() {
