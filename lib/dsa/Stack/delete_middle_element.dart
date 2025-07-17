@@ -1,40 +1,19 @@
-void deleteMiddle(Stack<int> stack, int size) {
-  // if (stack.isEmpty) return;
+void main() {
+  List<int> stack = [1, 2, 3, 4, 5]; // Stack: top is at end
+  int n = stack.length;
+  int mid = n ~/ 2;
 
-  int mid = size ~/ 2;
-  _deleteHelper(stack, mid);
+  deleteMiddle(stack, 0, mid);
+  print(stack); // Output: [1, 2, 4, 5]
 }
 
-void _deleteHelper(Stack<int> stack, int mid) {
-  if (mid == 0) {
-    stack.pop(); // Remove the middle element
+void deleteMiddle(List<int> stack, int current, int middle) {
+  if (stack.isEmpty || current == middle) {
+    stack.removeLast();
     return;
   }
 
-  int temp = stack.pop()!;
-  _deleteHelper(stack, mid - 1);
-  stack.push(temp);
-}
-
-class Stack<T> {
-  List<T> _stack = [];
-
-  void push(T value) => _stack.add(value);
-  T? pop() => _stack.isEmpty ? null : _stack.removeLast();
-  void display() => print(_stack);
-}
-
-void main() {
-  var stack = Stack<int>();
-  stack.push(1);
-  stack.push(2);
-  stack.push(3);
-  stack.push(4);
-  stack.push(5);
-
-  stack.display(); // Output: [1, 2, 3, 4, 5]
-
-  deleteMiddle(stack, stack._stack.length);
-
-  stack.display(); // Output: [1, 2, 4, 5]
+  int top = stack.removeLast();
+  deleteMiddle(stack, current + 1, middle);
+  stack.add(top);
 }

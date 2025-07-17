@@ -7,10 +7,9 @@ class Trie {
   TrieNode root = TrieNode();
 
   void insert(String word) {
-    TrieNode node = root;
+    var node = root;
     for (var ch in word.split('')) {
-      node.children[ch] ??= TrieNode();
-      node = node.children[ch]!;
+      node = node.children.putIfAbsent(ch, () => TrieNode());
     }
     node.isEnd = true;
   }

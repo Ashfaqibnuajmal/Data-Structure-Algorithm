@@ -2,7 +2,7 @@ abstract class Animal {
   void sound(); // Abstract method (no body)
 }
 
-class Dog extends Animal {
+class Dog implements Animal {
   @override
   void sound() {
     print('Woof!');

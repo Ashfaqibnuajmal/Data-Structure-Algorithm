@@ -2,10 +2,9 @@ import 'dart:collection';
 
 class Graph {
   Map<int, List<int>> adj = {};
-
   void addEdge(int u, int v) {
-    adj[u] = (adj[u] ?? [])..add(v);
-    adj[v] = (adj[v] ?? [])..add(u);
+    adj.putIfAbsent(u, () => []).add(v);
+    adj.putIfAbsent(v, () => []).add(u);
   }
 
   int shortestPath(int start, int end) {

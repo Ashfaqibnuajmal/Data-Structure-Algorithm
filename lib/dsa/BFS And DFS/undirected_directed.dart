@@ -1,14 +1,9 @@
 class Graph {
   Map<int, List<int>> adj = {};
-  bool isDirected;
-
-  Graph({this.isDirected = false});
 
   void addEdge(int u, int v) {
     adj.putIfAbsent(u, () => []).add(v);
-    if (!isDirected) {
-      adj.putIfAbsent(v, () => []).add(u);
-    }
+    adj.putIfAbsent(v, () => []).add(u);
   }
 
   void printGraph() {
@@ -19,17 +14,12 @@ class Graph {
 }
 
 void main() {
-  Graph undirectedGraph = Graph();
-  undirectedGraph.addEdge(1, 2);
-  undirectedGraph.addEdge(1, 3);
-  undirectedGraph.addEdge(2, 4);
-  print("Undirected Graph:");
-  undirectedGraph.printGraph();
+  Graph g = Graph();
+  g.addEdge(1, 2);
+  g.addEdge(1, 3);
+  g.addEdge(2, 4);
+  g.addEdge(3, 4);
+  g.addEdge(4, 5);
 
-  Graph directedGraph = Graph(isDirected: true);
-  directedGraph.addEdge(1, 2);
-  directedGraph.addEdge(1, 3);
-  directedGraph.addEdge(3, 4);
-  print("\nDirected Graph:");
-  directedGraph.printGraph();
+  g.printGraph();
 }

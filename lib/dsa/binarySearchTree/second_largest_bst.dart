@@ -10,7 +10,7 @@ int? findSecondLargest(TreeNode? root) {
   TreeNode? current = root;
   while (current != null) {
     if (current.right != null &&
-        current.right!.left == null &&
+        current.right!.left != null &&
         current.right!.right == null) {
       return current.value;
     }
